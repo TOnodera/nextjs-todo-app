@@ -6,7 +6,8 @@ import {
   extendTheme,
   Grid,
 } from "@mui/joy";
-import AddTaskSharpIcon from "@mui/icons-material/AddTaskSharp";
+import Header from "./Header";
+import Footer from "./Footer";
 
 interface Props {
   children: React.ReactNode;
@@ -16,6 +17,12 @@ export default function Template({ children }: Props) {
     colorSchemes: {
       light: {
         palette: {
+          text: {
+            primary: "#222",
+            secondary: "#222",
+            tertiary: "#fff",
+            icon: "#fff",
+          },
           primary: {
             50: "#C0CCD9",
             100: "#A5B8CF",
@@ -53,30 +60,11 @@ export default function Template({ children }: Props) {
       <CssBaseline>
         <Grid container direction="column" sx={{ height: "100%" }}>
           <Grid>
-            <>
-              <Grid
-                container
-                alignItems="center"
-                sx={(theme) => ({
-                  padding: "1rem",
-                  backgroundColor:
-                    theme.colorSchemes.light.palette.primary[100],
-                  color: "white",
-                })}
-              >
-                <Grid>
-                  <AddTaskSharpIcon />
-                </Grid>
-                <Grid>Todo App</Grid>
-              </Grid>
-            </>
+            <Header />
           </Grid>
           <Divider />
           <Grid>{children}</Grid>
-          <Grid sx={{ marginTop: "auto", textAlign: "center" }}>
-            <Divider />
-            Footer
-          </Grid>
+          <Footer />
         </Grid>
       </CssBaseline>
     </CssVarsProvider>

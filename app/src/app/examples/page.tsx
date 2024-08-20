@@ -1,5 +1,5 @@
-import { Grid } from "@mui/joy";
+import { Typography } from "@mui/joy";
 
 export default function Examples() {
-  return "this is examples page";
+  return <Typography>examples</Typography>;
 }
