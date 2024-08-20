@@ -1,4 +1,5 @@
 "use client";
+import { Person } from "@mui/icons-material";
 import {
   CssBaseline,
   CssVarsProvider,
@@ -37,7 +38,16 @@ export default function Template({ children }: Props) {
       <CssBaseline>
         <Grid container direction="column" sx={{ height: "100%" }}>
           <Grid>
-            <Typography variant="outlined">Todo App</Typography>
+            <>
+              <Grid container>
+                <Grid>
+                  <Person />
+                </Grid>
+                <Grid>
+                  <Typography variant="outlined">Todo App</Typography>
+                </Grid>
+              </Grid>
+            </>
           </Grid>
           <Divider />
           <Grid>{children}</Grid>
